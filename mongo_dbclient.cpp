@@ -229,7 +229,8 @@ static int dbclient_insert_batch(lua_State *L) {
 
   try {
     std::vector<BSONObj> vdata;
-    size_t tlen = lua_rawlen(L, 3) + 1;
+    //size_t tlen = lua_rawlen(L, 3) + 1;
+    size_t tlen = lua_objlen(L, 3) + 1;
     for (size_t i = 1; i < tlen; ++i) {
       vdata.push_back(BSONObj());
       lua_rawgeti(L, 3, i);

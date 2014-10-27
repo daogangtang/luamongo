@@ -181,8 +181,8 @@ int mongo_cursor_register(lua_State *L) {
     };
 
     luaL_newmetatable(L, LUAMONGO_CURSOR);
-    //luaL_register(L, 0, cursor_methods);
-    luaL_setfuncs(L, cursor_methods, 0);
+    luaL_register(L, 0, cursor_methods);
+    //luaL_setfuncs(L, cursor_methods, 0);
     lua_pushvalue(L,-1);
     lua_setfield(L, -2, "__index");
 
@@ -194,8 +194,8 @@ int mongo_cursor_register(lua_State *L) {
     
     lua_pop(L,1);
     
-    //luaL_register(L, LUAMONGO_CURSOR, cursor_class_methods);
-    luaL_newlib(L, cursor_class_methods);
+    luaL_register(L, LUAMONGO_CURSOR, cursor_class_methods);
+    //luaL_newlib(L, cursor_class_methods);
 
     return 1;
 }

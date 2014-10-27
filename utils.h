@@ -35,9 +35,9 @@ extern "C" {
 #include <lauxlib.h>
 #include <lualib.h>
 
-#if !defined(LUA_VERSION_NUM) || (LUA_VERSION_NUM < 502)
-#error "Needs Lua 5.2 or greater"
-#endif
+//#if !defined(LUA_VERSION_NUM) || (LUA_VERSION_NUM < 502)
+//#error "Needs Lua 5.2 or greater"
+//#endif
 };
 
 #define UNUSED_VARIABLE(x) (void)(x)

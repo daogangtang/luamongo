@@ -118,7 +118,8 @@ LM_EXPORT int luaopen_mongo(lua_State *L) {
     lua_setfield(L, -2, LUAMONGO_VERSION_STRING);
 
     // add static functions
-    luaL_setfuncs(L, static_functions, 0);
+    //luaL_setfuncs(L, static_functions, 0);
+    luaL_register(L, "mongo", static_functions);  
 
     return 1;
 }
