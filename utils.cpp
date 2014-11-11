@@ -103,7 +103,8 @@ void lua_push_value(lua_State *L, const BSONElement &elem) {
         lua_rawseti(L, -2, 1);
         break;
     case mongo::jstNULL:
-        push_bsontype_table(L, mongo::jstNULL);
+        //push_bsontype_table(L, mongo::jstNULL);
+        lua_pushstring(L, "");
         break;
     case mongo::EOO:
         break;
